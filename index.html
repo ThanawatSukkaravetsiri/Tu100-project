@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thammasat Drinking Water Spot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="main">
+      <h1>Thammasat Drinking <span id="red">Water Spot</span></h1>
+      <form id="searchForm" class="searchForm">
+        <div class="searchBox">
+          <span class="searchIcon" aria-hidden="true">⌕</span>
+          <label class="hideText" for="searchInput">ค้นหาสถานที่</label>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search location... / ค้นหาสถานที่..."
+            autocomplete="on"
+          >
+          <button id="clearButton" class="clearBtn" type="button" aria-label="ล้างการค้นหา" hidden>x</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="resultBox" hidden>
+      <div class="resultInner">
+        <div id="resultList" class="resultList"></div>
+        <p id="noResult" class="noResult" hidden>ไม่พบสถานที่ที่ค้นหา</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
