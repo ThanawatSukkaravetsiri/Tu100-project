@@ -214,3 +214,104 @@ button {
     font-size: 29px;
   }
 }
+
+/* Water spot details inside a result card */
+.floor {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f3f4;
+}
+
+.floorTitle {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.spot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.spotMedia {
+  width: 100%;
+}
+
+.spotImg {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f1f3f4;
+}
+
+.spotPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 160px;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  background: #f8f9fa;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.spotPlaceholder span {
+  font-size: 28px;
+}
+
+/* hide the placeholder while a real image is present */
+.spotImg + .spotPlaceholder {
+  display: none;
+}
+
+.spotText {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mapLink {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mapLink:hover {
+  background: #f6f3fb;
+}
+
+.noData {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (min-width: 700px) {
+  .spot {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .spotMedia {
+    width: 260px;
+    flex-shrink: 0;
+  }
+}
