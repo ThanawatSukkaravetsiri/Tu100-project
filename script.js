@@ -13,6 +13,7 @@
 
 // Turns a normal Google Drive share link (or just the file ID) into an image URL.
 function drive(linkOrId) {
+  if (!linkOrId) return "";   // empty link -> no image -> placeholder box
   const match = String(linkOrId).match(/\/d\/([\w-]+)|[?&]id=([\w-]+)/);
   const id = match ? (match[1] || match[2]) : String(linkOrId).trim();
   return `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
@@ -23,6 +24,7 @@ const locations = [
   {
     name: "คณะนิติศาสตร์ (LAW)",
     aliases: ["คณะนิติศาสตร์ (LAW)", "law", "นิติ"],
+    cover: drive("https://drive.google.com/file/d/1OMA46U08QDCopoad41C9uXv4ZSSQsPRE/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -60,6 +62,7 @@ const locations = [
   {
     name: "คณะพาณิชยศาสตร์และการบัญชี (TBS)",
     aliases: ["พาณิชยศาสตร์และการบัญชี", "tbs", "บัญชี"],
+    cover: drive("https://drive.google.com/file/d/1fWWOFDR6kyom3eq1cjL76Ts5OtyS-DHy/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -117,6 +120,7 @@ const locations = [
   {
     name: "อาคารกองกิจกรรมนักศึกษา",
     aliases: ["อาคารกองกิจกรรมนักศึกษา", "กองกิจกรรมนักศึกษา", "กองกิจกรรม"],
+    cover: drive("https://drive.google.com/file/d/1Lm1YBVSXAOawZg5rMzDrfPJaDri85PXh/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -144,6 +148,7 @@ const locations = [
   {
     name: "Mini Stadium",
     aliases: ["mini", "Mini Stadium", "stadium"],
+    cover: drive("https://drive.google.com/file/d/1TH_Sm8GL5jtkdU3HaunzVFwL5iERhHoB/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -161,9 +166,10 @@ const locations = [
   {
     name: "ศูนย์การเรียนรู้กรมหลวงนราธิวาสราชนครินทร์ (ศกร.)",
     aliases: ["ศกร", "ศูนย์การเรียนรู้กรมหลวงนราธิวาสราชนครินทร์ (ศกร.)", "ศูนย์การเรียนรู้กรมหลวงนราธิวาสราชนครินทร์"],
+    cover: drive("https://drive.google.com/file/d/1n90CH7AYww188k1zbkk5rMmNRASy6r1y/view?usp=drive_link"),
     floors: [
       {
-        floor: 1,
+        floor: 2,
         spots: [
           {
             detail: "หน้าทางเข้าห้องน้ำ",
@@ -178,6 +184,7 @@ const locations = [
   {
     name: "หอสมุดป๋วย อึ๊งภากรณ์ (ป๋วย)",
     aliases: ["หอสมุดป๋วย", "ป๋วย", "หอสมุดป๋วย อึ๊งภากรณ์ (ป๋วย)"],
+    cover: drive("https://drive.google.com/file/d/1tIkTSRAGwu5Hc4BxTBKxs8cJWXWpFzgm/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -215,6 +222,7 @@ const locations = [
   {
     name: "Green Canteen",
     aliases: ["กรีนแคนทีน", "green canteen"],
+    cover: drive("https://drive.google.com/file/d/1UOWY1WkioGHvGtsKkPpWzVNhz45QCkCh/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -232,6 +240,7 @@ const locations = [
   {
     name: "SC1 อาคารเรียนรวมสังคมศาสตร์",
     aliases: ["SC", "SC.", "อาคารเรียนรวมสังคมศาสตร์"],
+    cover: drive("https://drive.google.com/file/d/1uNO4uSYELT4BtV4J9pFmpWP1-bvq7JWT/view?usp=drive_link"),
     floors: [
       {
         floor: 1, spots: [
@@ -300,6 +309,7 @@ const locations = [
   {
     name: "SC3 อาคารเรียนรวมสังคมศาสตร์ 3",
     aliases: ["SC3", "SC.3", "อาคารเรียนรวมสังคมศาสตร์ 3", "SC"],
+    cover: drive("https://drive.google.com/file/d/1jZL_MX4vFi7kyHMn-M8NkSnQCYaqwZPy/view?usp=sharing"),
     floors: [
       {
         floor: 1, spots: [
@@ -343,6 +353,7 @@ const locations = [
   {
     name: "โรงอาหารสังคมศาสตร์ 1",
     aliases: ["โรงอาหาร", "โรง", "โรงอาหารสังคมศาสตร์ 1", "โรงอาหาร sc1"],
+    cover: drive("https://drive.google.com/file/d/1QRhiefz51rBRd0yYZ9Qrw9BYM6Aol_sj/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -370,6 +381,7 @@ const locations = [
   {
     name: "โรงอาหารสังคมศาสตร์ 2",
     aliases: ["โรงอาหาร", "โรง", "โรงอาหารสังคมศาสตร์ 2", "โรงอาหาร sc2"],
+    cover: drive("https://drive.google.com/file/d/1gmoAdWvbT6qBtTn2TWXnBi8sa_QwHEp-/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -392,6 +404,7 @@ const locations = [
   {
     name: "ศูนย์อาหารวิทยาศาสตร์และเทคโนโลยี",
     aliases: ["ศูนย์อาหารวิทยาศาสตร์และเทคโนโลยี", "วิทย์", "วิดยา", "โรงอาหาร"],
+    cover: drive("https://drive.google.com/file/d/1Bv65Qn1rMU0m7dsMAzOq2_vrl2XjdGc3/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -414,6 +427,7 @@ const locations = [
   {
     name: "ศูนย์อาหารทิวสน",
     aliases: ["ศูนย์อาหารทิวสน", "ทิวสน", "โรงอาหาร"],
+    cover: drive("https://drive.google.com/file/d/1zKP3_svNRrS9yyK6w0fZVoxaPLcfMO-5/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -431,6 +445,7 @@ const locations = [
   {
     name: "ยิมเนเซียม 4 (GYM 4)",
     aliases: ["ยิม", "ยิม 4", "ยิมเนเซียม 4", "gym 4"],
+    cover: drive("https://drive.google.com/file/d/1nIURNL8j0OEAHeRqd_i05cOdNyR5lzZ2/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -448,6 +463,7 @@ const locations = [
   {
     name: "ยิมเนเซียม 5 (GYM 5)",
     aliases: ["ยิม", "ยิม 5", "ยิมเนเซียม 5", "gym 5"],
+    cover: drive("https://drive.google.com/file/d/1IROwd23o8hHMpaBvieo6j5_S7qbywuS9/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -465,6 +481,7 @@ const locations = [
   {
     name: "อาคารสำนักงานบริหารทรัพย์สินและกีฬา",
     aliases: ["สำนักงาน", "ทรัพย์สิน", "กีฬา", "สัพสิน"],
+    cover: drive("https://drive.google.com/file/d/165ZdTgoDSJXnA8DmV-CCTsHq2_54eGPZ/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -482,6 +499,7 @@ const locations = [
   {
     name: "ยิมเนเซียม 7 (GYM 7)",
     aliases: ["ยิม", "ยิม 7", "ยิมเนเซียม 7", "gym 7"],
+    cover: drive("https://drive.google.com/file/d/1B0z7QASCXoheN6vuk5eogv167LS5fBI5/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -504,6 +522,7 @@ const locations = [
   {
     name: "อาคารบรรยายรวม 1 (LC.1)",
     aliases: ["บร.", "บร", "บร 1", "LC", "LC 1", "บรรยายเรียนรวม 1"],
+    cover: drive("https://drive.google.com/file/d/1k6ZwCDTh_XJy2mmKUAOirmCzLq4gsrCy/view?usp=drive_link"),
     floors: [
       {
         floor: 2,
@@ -521,6 +540,7 @@ const locations = [
   {
     name: "อาคารบรรยายรวม 2 (LC.2)",
     aliases: ["บร.", "บร", "บร 2", "LC", "LC 2", "บรรยายเรียนรวม 2"],
+    cover: drive("https://drive.google.com/file/d/1VNBz8DYOw4ocn3bjVLoypbWsXemqvts7/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -538,6 +558,7 @@ const locations = [
   {
     name: "อาคารบรรยายรวม 3 (LC.3)",
     aliases: ["บร.", "บร", "บร 3", "LC", "LC 3", "บรรยายเรียนรวม 3"],
+    cover: drive("https://drive.google.com/file/d/1mm4g5zIkAoq1Ilcb9-Ij8v4NFOnBVPGL/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -555,6 +576,7 @@ const locations = [
   {
     name: "อาคารบรรยายรวม 4 (LC.4)",
     aliases: ["บร.", "บร", "บร 4", "LC", "LC 4", "บรรยายเรียนรวม 4"],
+    cover: drive("https://drive.google.com/file/d/1Ayz4cDSkg4AUKDfsmmRIfu3v9OG_-eCj/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -577,6 +599,7 @@ const locations = [
   {
     name: "อาคารบรรยายรวม 5 (LC.5)",
     aliases: ["บร.", "บร", "บร 5", "LC", "LC 5", "บรรยายเรียนรวม 5"],
+    cover: drive("https://drive.google.com/file/d/1ojkjOC2Syg-99iw5Y5H4_oVY_03g5JFu/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -599,6 +622,7 @@ const locations = [
   {
     name: "อาคารเดือน บุนนาค คณะเศรษฐศาสตร์",
     aliases: ["เดือน", "บุนนาค", "คณะเศรษฐศาสตร์", "อาคารเดือน บุนนาค คณะเศรษฐศาสตร์"],
+    cover: drive("https://drive.google.com/file/d/1r9ZXSW4x1JnbzBkNLd8lULNEjhLmerxg/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -626,6 +650,7 @@ const locations = [
   {
     name: "คณะเศรษฐศาสตร์ (ECON)",
     aliases: ["ECON", "คณะเศรษฐศาสตร์", "เสดสาด"],
+    cover: drive("https://drive.google.com/file/d/1NNvmmtu-a8QM8jx5l1kA8ob2p1ESXuNP/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
@@ -653,31 +678,49 @@ const locations = [
   {
     name: "อาคารเรียนและปฏิบัติการรวม (อาคารปิยชาติ)",
     aliases: ["ปิย", "อาคารเรียนและปฏิบัติการรวม", "อาคารปิยชาติ"],
+    cover: drive("https://drive.google.com/file/d/1NdX23LzgCyCMO0eqk82oNPVotUnMwWGM/view?usp=drive_link"),
     floors: [
       {
         floor: 1,
         spots: [
           {
-            detail: "บริเวณหน้าห้องคณะกรรมการนักศึกษา คณะสหเวช",
+            detail: "บริเวณหน้าห้องคณะกรรมการนักศึกษา คณะสหเวชศาสตร์",
             image: drive("https://drive.google.com/file/d/1dH55IYDB6Fnh46teRyBOf51r3nb43Rx9/view?usp=drivesdk"),
             mapUrl: "https://maps.app.goo.gl/oGgZxoA5iyySo35w9?g_st=ic"
+          }
+        ]
+      },
+      {
+        floor: 2,
+        spots: [
+          {
+            detail: "บริเวณหน้าห้องน้ำหญิง ตรงข้ามห้อง 236",
+            image: drive("https://drive.google.com/file/d/1N3eqqN93HSD47epm5qtfS96dQTY8Mo3l/view?usp=drivesdk"),
+            mapUrl: "https://maps.app.goo.gl/o854t7tJMcAogHsf7?g_st=ic"
           },
         ]
       }
     ]
   },
+  //คณะสังคมสงเคราะห์ศาสตร์
+  {
+    name: "คณะสังคมสงเคราะห์ศาสตร์",
+    aliases: ["คณะสังคมสงเคราะห์ศาสตร์", "SW", "สังคม"],
+    cover: drive("https://drive.google.com/file/d/17djTBFR2YvShanFQO2c79azU5d-2u1VA/view?usp=drive_link"),
+    floors: [
+      {
+        floor: 1,
+        spots: [
+          {
+            detail: "บริเวณป้ายคณะสังคมสงเคราห์ศาสตร์",
+            image: drive("https://drive.google.com/file/d/1QTFwzjRwdjfK5IBO99YTg6Lrf9O4IG21/view?usp=drivesdk"),
+            mapUrl: "https://maps.app.goo.gl/2ZhMbkJf1uHTqexY7?g_st=ic"
+          }
+        ]
+      }
+    ]
+  }
 ].map(item => typeof item === "string" ? { name: item.trim(), aliases: [], floors: [] } : item);
-
-const form = document.getElementById("searchForm");
-const input = document.getElementById("searchInput");
-const clearButton = document.getElementById("clearButton");
-const results = document.getElementById("results");
-const resultList = document.getElementById("resultList");
-const noResult = document.getElementById("noResult");
-
-function matches(location, q) {
-  return [location.name, ...location.aliases].some(n => n.toLowerCase().includes(q));
-}
 
 function spotHTML(spot) {
   const img = spot.image
@@ -687,13 +730,13 @@ function spotHTML(spot) {
   const media = `
       <div class="spotMedia">
         ${img}
-        <div class="spotPlaceholder"><span aria-hidden="true">🖼️</span>ยังไม่มีรูปภาพ</div>
+        <div class="spotPlaceholder">${IMG_ICON}ยังไม่มีรูปภาพ</div>
       </div>`;
   const text = spot.detail
     ? `<p class="spotText">${escapeHTML(spot.detail)}</p>`
     : `<p class="spotText noData">ยังไม่มีคำอธิบายตำแหน่ง</p>`;
   const map = spot.mapUrl
-    ? `<a class="mapLink" href="${escapeHTML(spot.mapUrl)}" target="_blank" rel="noopener">📍 เปิดใน Google Maps</a>`
+    ? `<a class="mapLink" href="${escapeHTML(spot.mapUrl)}" target="_blank" rel="noopener">เปิดใน Google Maps</a>`
     : "";
   return `
     <div class="spot">${media}
@@ -712,33 +755,6 @@ function floorHTML(floor) {
     </div>`;
 }
 
-function cardHTML(location, index) {
-  const floors = [...location.floors].sort((a, b) => a.floor - b.floor);
-  const body = floors.length
-    ? floors.map(floorHTML).join("")
-    : `<p class="noData">ยังไม่มีข้อมูลตู้กดน้ำ</p>`;
-  return `
-    <article class="resultItem">
-      <span class="resultNum">${index + 1}</span>
-      <p class="resultName">${escapeHTML(location.name)}</p>
-      ${body}
-    </article>`;
-}
-
-function render(query) {
-  const q = query.trim().toLowerCase();
-
-  if (!q) {
-    results.hidden = true;
-    return;
-  }
-
-  const found = locations.filter(location => matches(location, q));
-  resultList.innerHTML = found.map(cardHTML).join("");
-  noResult.hidden = found.length !== 0;
-  results.hidden = false;
-}
-
 function escapeHTML(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -748,19 +764,81 @@ function escapeHTML(value) {
     .replaceAll("'", "&#039;");
 }
 
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  render(input.value);
+
+// ---------- Location list ----------
+// Optional per location:
+//   cover: drive("https://drive.google.com/file/d/XXXX/view")   <- photo shown on the location card
+//   tab: "short name"                                           <- shorter title on the card
+// No cover = grey image placeholder is shown instead.
+const IMG_ICON = `<svg class="phIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 9"/></svg>`;
+
+const grid = document.getElementById("grid");
+const searchInput = document.getElementById("searchInput");
+const emptyMsg = document.getElementById("empty");
+const dialog = document.getElementById("detail");
+const detailTitle = document.getElementById("detailTitle");
+const detailBody = document.getElementById("detailBody");
+
+let lastOpener = null;
+
+function summary(location) {
+  const floors = location.floors.map(f => f.floor).sort((a, b) => a - b);
+  const spots = location.floors.reduce((n, f) => n + f.spots.length, 0);
+  return floors.length
+    ? { floorText: "ชั้น " + floors.join(", "), spots }
+    : { floorText: "ยังไม่มีข้อมูล", spots: 0 };
+}
+
+function cardHTML(location, index) {
+  const { floorText, spots } = summary(location);
+  const img = location.cover
+    ? `<img class="locThumb" src="${escapeHTML(location.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`
+    : "";
+  return `
+    <button class="loc ${spots ? "" : "loc-empty"}" type="button" data-index="${index}">
+      <span class="locMedia">${img}<span class="locPh">${IMG_ICON}</span></span>
+      <span class="locText">
+        <span class="locName">${escapeHTML(location.tab || location.name)}</span>
+        <span class="locMeta">${escapeHTML(floorText)}</span>
+      </span>
+      ${spots ? `<span class="locCount">${spots} จุด</span>` : ""}
+    </button>`;
+}
+
+function renderGrid() {
+  const q = searchInput.value.trim().toLowerCase();
+  const shown = locations
+    .map((location, index) => ({ location, index }))
+    .filter(({ location }) =>
+      !q || [location.name, location.tab || "", ...location.aliases].some(n => n.toLowerCase().includes(q)));
+
+  grid.innerHTML = shown.map(({ location, index }) => cardHTML(location, index)).join("");
+  emptyMsg.hidden = shown.length !== 0;
+}
+
+function openDetail(index, opener) {
+  const location = locations[index];
+  const floors = [...location.floors].sort((a, b) => a.floor - b.floor);
+  detailTitle.textContent = location.name;
+  detailBody.innerHTML = floors.length
+    ? floors.map(floorHTML).join("")
+    : `<p class="noData">ยังไม่มีข้อมูลตู้กดน้ำของที่นี่</p>`;
+  lastOpener = opener;
+  dialog.showModal();
+  dialog.scrollTop = 0;
+}
+
+searchInput.addEventListener("input", renderGrid);
+
+grid.addEventListener("click", event => {
+  const card = event.target.closest(".loc");
+  if (card) openDetail(Number(card.dataset.index), card);
 });
 
-input.addEventListener("input", () => {
-  clearButton.hidden = input.value.length === 0;
-  render(input.value);
+dialog.addEventListener("click", event => {
+  // clicking the dark backdrop (outside the sheet) or the X closes it
+  if (event.target === dialog || event.target.closest(".closeBtn")) dialog.close();
 });
+dialog.addEventListener("close", () => lastOpener && lastOpener.focus());
 
-clearButton.addEventListener("click", () => {
-  input.value = "";
-  clearButton.hidden = true;
-  results.hidden = true;
-  input.focus();
-});
+renderGrid();

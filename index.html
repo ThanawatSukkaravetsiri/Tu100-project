@@ -10,31 +10,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <section class="main">
-      <h1>Thammasat Drinking <span id="red">Water Spot</span></h1>
-      <form id="searchForm" class="searchForm">
-        <div class="searchBox">
-          <span class="searchIcon" aria-hidden="true">⌕</span>
-          <label class="hideText" for="searchInput">ค้นหาสถานที่</label>
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Search location... / ค้นหาสถานที่..."
-            autocomplete="off"
-          >
-          <button id="clearButton" class="clearBtn" type="button" aria-label="ล้างการค้นหา" hidden>x</button>
-        </div>
-      </form>
-    </section>
-
-    <section id="results" class="resultBox" hidden>
-      <div class="resultInner">
-        <div id="resultList" class="resultList"></div>
-        <p id="noResult" class="noResult" hidden>ไม่พบสถานที่ที่ค้นหา</p>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="evalLink" href="https://docs.google.com/forms/d/e/1FAIpQLSdK6-L98rkKGm2bzQ_PcKwNvqgkjTQBp6JAJiyAZvXF6dn23w/viewform" target="_blank" rel="noopener">แบบประเมิน</a>
       </div>
-    </section>
+      <h1>Thammasat Drinking Water Spot</h1>
+      <p class="lead">หาตู้กดน้ำดื่มในธรรมศาสตร์ รังสิต เลือกสถานที่เพื่อดูชั้น รูปภาพ และแผนที่</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="tools">
+      <label class="hideText" for="searchInput">ค้นหาสถานที่</label>
+      <input id="searchInput" class="search" type="search" placeholder="ค้นหาสถานที่..." autocomplete="off">
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>ไม่พบสถานที่ที่ค้นหา ลองพิมพ์ชื่อสั้น ๆ</p>
   </main>
+
+  <dialog id="detail" aria-labelledby="detailTitle">
+    <div class="sheetHead">
+      <h2 id="detailTitle"></h2>
+      <button class="closeBtn" type="button" aria-label="ปิด">&times;</button>
+    </div>
+    <div id="detailBody" class="sheetBody"></div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
